@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meadow Protocol - Initialize</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=Be+Vietnam+Pro:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e5e2dd",
+                        "secondary-fixed-dim": "#fab899",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#002019",
+                        "on-surface": "#1c1c19",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#414845",
+                        "surface-tint": "#42655b",
+                        "inverse-on-surface": "#f3f0eb",
+                        "primary-fixed": "#c4ebdd",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#21005e",
+                        "secondary-container": "#fdba9b",
+                        "surface-dim": "#dcdad5",
+                        "primary": "#42655b",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f6f3ee",
+                        "on-secondary-fixed-variant": "#693b24",
+                        "surface-container-high": "#ebe8e3",
+                        "on-tertiary-container": "#350e82",
+                        "tertiary": "#674bb5",
+                        "tertiary-container": "#9f83f1",
+                        "primary-fixed-dim": "#a8cfc2",
+                        "on-tertiary-fixed-variant": "#4f319c",
+                        "primary-container": "#789d91",
+                        "surface": "#fcf9f4",
+                        "on-error": "#ffffff",
+                        "on-background": "#1c1c19",
+                        "on-secondary-container": "#784830",
+                        "on-primary-container": "#0f342b",
+                        "on-primary": "#ffffff",
+                        "outline": "#717975",
+                        "tertiary-fixed-dim": "#cebdff",
+                        "surface-variant": "#e5e2dd",
+                        "inverse-surface": "#31302d",
+                        "on-primary-fixed-variant": "#2a4d43",
+                        "tertiary-fixed": "#e8ddff",
+                        "secondary": "#845239",
+                        "surface-container": "#f0ede8",
+                        "secondary-fixed": "#ffdbcc",
+                        "background": "#fcf9f4",
+                        "inverse-primary": "#a8cfc2",
+                        "on-secondary-fixed": "#341101",
+                        "outline-variant": "#c1c8c4",
+                        "surface-bright": "#fcf9f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "element-gap-sm": "8px",
+                        "section-padding": "48px",
+                        "element-gap-md": "16px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-margin": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Be Vietnam Pro"],
+                        "label-caps": ["Space Grotesk"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "technical-code": ["Space Grotesk"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-sm": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "technical-code": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: inset 0 1px 1px rgba(255,255,255,0.5);
+        }
+        .chunky-button {
+            box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
+        }
+        .chunky-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+        }
+        .sunken-input {
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .meadow-bg {
+            background: radial-gradient(circle at top left, #fcf9f4, #f5f2ed);
+            position: relative;
+            overflow: hidden;
+        }
+        .meadow-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm76-26c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zm-11 36c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zM7 46c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zm54 2c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zM25 64c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zm23-40c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z' fill='%23789D91' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.6;
+            z-index: 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="meadow-bg min-h-screen flex items-center justify-center p-6 font-body-lg text-on-surface">
+<!-- Top Left System Indicator -->
+<div class="fixed top-gutter left-gutter flex flex-col gap-1 z-10">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Network Status: Stable</span>
+</div>
+<div class="h-[1px] w-full bg-primary/20"></div>
+</div>
+<!-- Bottom Right Version Info -->
+<div class="fixed bottom-gutter right-gutter z-10">
+<span class="font-technical-code text-technical-code text-on-surface-variant/50">v4.2.0-meadow // build_8821</span>
+</div>
+<!-- Login Container -->
+<main class="w-full max-w-lg relative z-10">
+<!-- Main Card -->
+<div class="glass-panel rounded-[40px] p-10 md:p-14 relative overflow-hidden">
+<!-- Decorative Header Ornament -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 flex items-center gap-2 py-4">
+<div class="w-1.5 h-1.5 rounded-full bg-primary-container"></div>
+<div class="w-24 h-[1px] bg-outline-variant/30"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary-container"></div>
+</div>
+<!-- Content Area -->
+<div class="flex flex-col items-center text-center mb-10">
+<div class="w-16 h-16 bg-primary rounded-3xl flex items-center justify-center mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="energy_program">energy_program_saving</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-primary-container mb-2 tracking-tighter uppercase">INITIALIZE_MEADOW</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">Welcome back, operative. Reconnect to the network.</p>
+</div>
+<form class="space-y-6">
+<!-- Social Auth -->
+<button class="w-full chunky-button bg-surface-container-low hover:bg-surface-container-high border-2 border-primary-container/20 rounded-3xl py-4 flex items-center justify-center gap-3 transition-all" type="button">
+<img alt="Google Logo" class="w-6 h-6" data-alt="Official Google 'G' icon with multi-color brand aesthetic on transparent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG8UBAlhNAUFJX1jf7miazMsFbNzW-Y0TMRnFY2ZWI5ytJh-2j4e9x2xpI9nmM3VJHS3rAyBB_2fxw5hPQF8g1b9iv7hgMz5hbRWZablwjkAio8p3VHpWTAalmwm6iyWQug7_vOxDowcbNUnGG8Et6q80HmAssFG_cKD0Kn2fBdwDtE2jkczU9FxVT4L27aCgtiZggh6PFIid5xgN5YCPkZ1qjNXPfVj1ZPBEL4Lfm_4sp2TcM7OK0Sla4L0r9Ioj2jruv1hSF0drR"/>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Sign in with Google</span>
+</button>
+<div class="flex items-center gap-4 py-2">
+<div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+<span class="font-technical-code text-[10px] text-outline uppercase tracking-widest">or direct entry</span>
+<div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+</div>
+<!-- Input Fields -->
+<div class="space-y-4">
+<div class="relative group">
+<label class="absolute -top-2 left-6 bg-surface px-2 font-label-caps text-[10px] text-primary z-10 border border-primary/20 rounded-full">OPERATIVE ID</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-primary/60 text-lg" data-icon="fingerprint">fingerprint</span>
+<input class="w-full sunken-input bg-surface border-2 border-transparent focus:border-primary/30 focus:ring-0 rounded-3xl py-4 pl-14 pr-6 font-technical-code text-on-surface placeholder:text-on-surface-variant/30 transition-all" placeholder="MEADOW-XXXX-XXXX" type="text"/>
+</div>
+</div>
+<div class="relative group">
+<label class="absolute -top-2 left-6 bg-surface px-2 font-label-caps text-[10px] text-primary z-10 border border-primary/20 rounded-full">ACCESS CODE</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-primary/60 text-lg" data-icon="key">key</span>
+<input class="w-full sunken-input bg-surface border-2 border-transparent focus:border-primary/30 focus:ring-0 rounded-3xl py-4 pl-14 pr-6 font-technical-code text-on-surface placeholder:text-on-surface-variant/30 transition-all" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center justify-between px-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative">
+<input class="peer hidden" type="checkbox"/>
+<div class="w-6 h-6 border-2 border-primary/30 rounded-lg bg-surface peer-checked:bg-primary-container peer-checked:border-primary transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm scale-0 peer-checked:scale-100 transition-transform" data-icon="check">check</span>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-primary transition-colors">Persist Session</span>
+</label>
+<a class="font-label-caps text-[10px] text-primary hover:underline underline-offset-4" href="#">Lost Protocol?</a>
+</div>
+<!-- Submit Button -->
+<button class="w-full chunky-button bg-primary hover:bg-primary/90 rounded-3xl py-5 flex items-center justify-center gap-2 border-b-4 border-on-primary-container/20 group transition-all" type="submit">
+<span class="font-label-caps text-label-caps text-white text-base tracking-widest">ESTABLISH_LINK</span>
+<span class="material-symbols-outlined text-white group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Decorative Accents -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary-container/10 rounded-full blur-3xl"></div>
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary-container/10 rounded-full blur-3xl"></div>
+</div>
+<!-- System Footer Notes -->
+<div class="mt-8 flex items-center justify-center gap-6">
+<div class="flex items-center gap-2 opacity-40">
+<span class="material-symbols-outlined text-sm" data-icon="shield_lock">shield_lock</span>
+<span class="font-technical-code text-[10px] uppercase tracking-tighter">E2E Encrypted</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant/50"></div>
+<div class="flex items-center gap-2 opacity-40">
+<span class="material-symbols-outlined text-sm" data-icon="cloud_sync">cloud_sync</span>
+<span class="font-technical-code text-[10px] uppercase tracking-tighter">Meadow-Grid-Node-01</span>
+</div>
+</div>
+</main>
+<!-- Background Decorative Elements -->
+<div class="fixed inset-0 z-0 pointer-events-none opacity-30">
+<div class="absolute top-20 right-[15%] w-96 h-96 border border-primary/10 rounded-full"></div>
+<div class="absolute top-40 right-[10%] w-[500px] h-[500px] border border-primary/5 rounded-full"></div>
+<div class="absolute -bottom-40 -left-20 w-[600px] h-[600px] bg-primary-container/5 rounded-full blur-3xl"></div>
+</div>
+</body></html>

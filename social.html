@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Space+Grotesk:wght@400;500;700&amp;family=Be+Vietnam+Pro:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e5e2dd",
+                    "secondary-fixed-dim": "#fab899",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#002019",
+                    "on-surface": "#1c1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#414845",
+                    "surface-tint": "#42655b",
+                    "inverse-on-surface": "#f3f0eb",
+                    "primary-fixed": "#c4ebdd",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#21005e",
+                    "secondary-container": "#fdba9b",
+                    "surface-dim": "#dcdad5",
+                    "primary": "#42655b",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f6f3ee",
+                    "on-secondary-fixed-variant": "#693b24",
+                    "surface-container-high": "#ebe8e3",
+                    "on-tertiary-container": "#350e82",
+                    "tertiary": "#674bb5",
+                    "tertiary-container": "#9f83f1",
+                    "primary-fixed-dim": "#a8cfc2",
+                    "on-tertiary-fixed-variant": "#4f319c",
+                    "primary-container": "#789d91",
+                    "surface": "#fcf9f4",
+                    "on-error": "#ffffff",
+                    "on-background": "#1c1c19",
+                    "on-secondary-container": "#784830",
+                    "on-primary-container": "#0f342b",
+                    "on-primary": "#ffffff",
+                    "outline": "#717975",
+                    "tertiary-fixed-dim": "#cebdff",
+                    "surface-variant": "#e5e2dd",
+                    "inverse-surface": "#31302d",
+                    "on-primary-fixed-variant": "#2a4d43",
+                    "tertiary-fixed": "#e8ddff",
+                    "secondary": "#845239",
+                    "surface-container": "#f0ede8",
+                    "secondary-fixed": "#ffdbcc",
+                    "background": "#fcf9f4",
+                    "inverse-primary": "#a8cfc2",
+                    "on-secondary-fixed": "#341101",
+                    "outline-variant": "#c1c8c4",
+                    "surface-bright": "#fcf9f4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "1rem",
+                    "3xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "element-gap-sm": "8px",
+                    "section-padding": "48px",
+                    "element-gap-md": "16px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "container-margin": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Be Vietnam Pro"],
+                    "label-caps": ["Space Grotesk"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "technical-code": ["Space Grotesk"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "body-sm": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "technical-code": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>.glass-panel {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.6)
+    }
+.chunky-button {
+    border-bottom-width: 3px;
+    transition: all 0.2s ease
+    }
+.chunky-button:active {
+    transform: translatey(2px);
+    border-bottom-width: 1px
+    }
+.grain-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCekBVDo_qnWGrj4_hDZ5h6ZA9j3i1nISfaNiWewkUPk1IQyiyJjn2pM9Je7PKnNFG7nDaWQstmgtebRKFgbjlVi8KTx737dO1VzbDXQl6H-xOyodh7B6tFtKBTyHNfDJz3mWdi0uf-9VYgjhd43F7Ts8fJyu1fLarjFpEKmBBajV0vIBE1c5m1LAJNi-mOdpnx3t2NKIrAikTZJv-bP-F4OjxSHe6Q8B3GIUcLtzASsCW0YP6inuwbQrl87e2bOuGuaef6UXKRKITd);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(255, 255, 255, 0.4)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-sm text-on-background min-h-screen relative overflow-x-hidden">
+<!-- Texture Overlay -->
+<div class="fixed inset-0 grain-texture z-[-1]"></div>
+<!-- Shared Component: TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-6 h-20 bg-[#F5F2ED]/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_20px_25px_-5px_rgba(45,30,60,0.05),0_4px_6px_-2px_rgba(120,157,145,0.1)] border-b-2 border-[#66867B]">
+<div class="flex items-center gap-4 w-full max-w-7xl mx-auto justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed border-2 border-primary overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Stylized portrait avatar of a friendly user with soft lighting and pastel background colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqHMK-3KmODiw_vjLdEVUAYTmhlOQ05embYAfUb-XCuCXnC38TsU6yhxW-WryKyM7JWIzFvpqH9eEnc8yRobKvbGRLYQTd05PNu9cD_0EaKsYzhtdQPCcAkHjJIsWPytrVzW_hqF4Dnd6PxXGeyl-vp7bCUmBSXIAvuLGlOsbF2Ymgfjmu0_dh3C00TE6VyYbqd5KbDrEXltHLMUDqrWpOjZ1VG0lqY01NYpFNn13Ha8AX3FkQ83uh9KD31zD7yd04_o4txt3--9ux"/>
+</div>
+<span class="text-xl font-black text-[#789D91] uppercase tracking-widest font-['Plus_Jakarta_Sans']">MEADOW PROTOCOL</span>
+</div>
+<div class="flex items-center gap-6 md:flex hidden">
+<span class="font-label-caps text-primary border-b-2 border-primary px-1">HUB</span>
+<span class="font-label-caps text-slate-500 hover:text-primary transition-colors cursor-pointer">SQUADS</span>
+<span class="font-label-caps text-slate-500 hover:text-primary transition-colors cursor-pointer">MARKET</span>
+</div>
+<div class="flex items-center justify-center p-2 rounded-xl hover:bg-white/30 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[#789D91]" data-icon="terminal">terminal</span>
+</div>
+</div>
+</header>
+<main class="pt-28 pb-32 px-4 max-w-2xl mx-auto flex flex-col gap-8">
+<!-- Main Feed Header -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="hub">hub</span>
+<span class="font-technical-code text-primary uppercase text-[10px] tracking-widest">Global Connection Active</span>
+</div>
+<h1 class="font-headline-xl text-primary-container leading-none uppercase tracking-tighter">MEADOW_FEED // ACTIVE_SQUADS</h1>
+</div>
+<!-- Card 1: Match Result -->
+<article class="glass-panel rounded-3xl p-6 shadow-[0_20px_25px_-5px_rgba(45,30,60,0.05),0_4px_6px_-2px_rgba(120,157,145,0.1)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="videogame_asset">videogame_asset</span>
+</div>
+<div class="flex items-start gap-4 mb-6 relative">
+<div class="w-12 h-12 rounded-2xl bg-secondary-fixed border-2 border-secondary shadow-inner flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="skull">skull</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-on-surface">NEON_REAPER</h3>
+<div class="flex gap-2 items-center">
+<span class="font-technical-code bg-primary/10 text-primary px-2 py-0.5 rounded-full text-[10px]">RANK: S-ELITE</span>
+<span class="font-technical-code text-slate-400 text-[10px]">2m ago</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest/50 rounded-2xl p-4 mb-6 border border-white/40 shadow-inner">
+<div class="flex justify-between items-center mb-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-secondary text-[10px]">MISSION STATUS</span>
+<span class="font-headline-md text-primary font-black tracking-tight">TOTAL VICTORY</span>
+</div>
+<div class="bg-primary px-3 py-1 rounded-lg shadow-lg border-b-2 border-on-primary-container">
+<span class="font-label-caps text-on-primary text-[12px]">LVL UP!</span>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden aspect-video border-2 border-white/60 mb-4">
+<img class="w-full h-full object-cover" data-alt="Cinematic video game screenshot showing a neon futuristic city skyline with soft bokeh and atmospheric fog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX7VI0WqquUhf0yTRWrtf0UjkY_yHFdV6CWQGCCWBcoE_igVQLvPml1gqvnxcH_Zfyx9qybET4v-5-xa97Zaip8eosdynhWXt0qVwAz9FNRLj4b_JTHOA6IqU9X6nByvoYtcZW_jBDFojz0xp9YALasrva87pWyfdhkoUIRb5Xv89qKDNSir_R14vwXPxZa7N9V6Ue6DMuVz5-kR0706Fp864EZNk5-mpyCW5ygdmMyGxYL8jSWFMnDDKsDSKPOwfSoVJLCcUf6mwJ"/>
+<div class="absolute bottom-2 left-2 flex gap-1">
+<div class="bg-black/60 backdrop-blur-md px-2 py-1 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-white" data-icon="network_check">network_check</span>
+<span class="font-technical-code text-white text-[9px]">Ping: 12ms</span>
+</div>
+<div class="bg-black/60 backdrop-blur-md px-2 py-1 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-white" data-icon="group">group</span>
+<span class="font-technical-code text-white text-[9px]">Squad Size: 4/5</span>
+</div>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-sm leading-relaxed italic">
+                    "Clean sweep at the reactor core. Those defensive bots didn't stand a chance against the new pulse wave build."
+                </p>
+</div>
+<div class="flex gap-3">
+<button class="chunky-button flex-1 bg-primary text-on-primary font-label-caps py-3 rounded-2xl border-on-primary-container flex items-center justify-center gap-2 shadow-lg">
+<span class="material-symbols-outlined text-sm" data-icon="favorite" data-weight="fill">favorite</span>
+                    CHEER
+                </button>
+<button class="chunky-button flex-1 bg-secondary-container text-on-secondary-container font-label-caps py-3 rounded-2xl border-[#784830] flex items-center justify-center gap-2 shadow-lg">
+<span class="material-symbols-outlined text-sm" data-icon="person_add">person_add</span>
+                    JOIN SQUAD
+                </button>
+</div>
+</article>
+<!-- Card 2: Status Update -->
+<article class="flex flex-col gap-2 relative">
+<div class="flex items-center gap-4 pl-4">
+<div class="w-14 h-14 rounded-full bg-tertiary-fixed border-4 border-white shadow-xl overflow-hidden ring-2 ring-tertiary/20">
+<img class="w-full h-full object-cover" data-alt="Portrait of a gamer wearing a modern headset with soft ambient pink and blue lighting in a cozy studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9W7N4HMEbs2usb74kt-aSeBfBzxSonrNzzr27CMmQEgbMspdR2AVnUVCKxK6ejtELXz7Ow54fOeR8Q-DFMlRc2qkeNQ0m6rsXen2r2qcTP5osoybK3qS6CCx_cmbWL32KrYIQ8mEGrtPWIwt_XC8pQNSbZc9ItPPiSZFt7ZR0eVBYJdO_4Wns3kz-skj7XlVvKy6LY8g2rCOhPSZ6jBhz_EEAoLZNhuHqWtpBCQDDKP1AGk4cjU1gvcqtNwfsrom-lR83hL_FPBvy"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-on-surface leading-none">VOID_WALKER</span>
+<span class="font-technical-code text-tertiary text-[10px]">PREPARING FOR RAID...</span>
+</div>
+</div>
+<div class="speech-bubble relative glass-panel rounded-[32px] p-8 shadow-[0_15px_30px_rgba(103,75,181,0.1)] border-2 border-white/80 mt-2">
+<div class="absolute -top-3 -right-3">
+<span class="material-symbols-outlined text-tertiary-container text-4xl opacity-40" data-icon="format_quote">format_quote</span>
+</div>
+<p class="font-body-lg text-on-surface text-xl leading-snug">
+                    Just finished the neural-link calibration. Ready for the <span class="text-tertiary font-bold">S-Rank raid</span> tonight. 🌲
+                </p>
+<div class="mt-6 pt-4 border-t border-tertiary/10 flex items-center justify-between">
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-300"></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-400"></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-500"></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-tertiary flex items-center justify-center text-[10px] text-white font-bold">+12</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-300 cursor-pointer hover:text-tertiary transition-colors" data-icon="reply">reply</span>
+<span class="material-symbols-outlined text-slate-300 cursor-pointer hover:text-error transition-colors" data-icon="favorite">favorite</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Complexity: Mini readout card -->
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel rounded-2xl p-4 border border-white/20 flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+<div>
+<p class="font-label-caps text-[9px] text-slate-400">SYSTEM STABILITY</p>
+<p class="font-technical-code text-on-surface">99.8% OPTIMAL</p>
+</div>
+</div>
+<div class="glass-panel rounded-2xl p-4 border border-white/20 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="forest">forest</span>
+<div>
+<p class="font-label-caps text-[9px] text-slate-400">ZONE STATUS</p>
+<p class="font-technical-code text-on-surface">SERENE / DAY</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Shared Component: BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#F5F2ED]/90 dark:bg-slate-900/90 backdrop-blur-lg rounded-t-[32px] shadow-[0_-10px_30px_rgba(0,0,0,0.05)] border-t border-white/30">
+<a class="flex flex-col items-center justify-center bg-[#789D91]/20 text-emerald-900 dark:text-emerald-50 rounded-2xl px-5 py-2 border-b-2 border-[#789D91] transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="diversity_3" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">Hub</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:scale-110 transition-transform duration-200 active:translate-y-1" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="groups_3">groups_3</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">Squads</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:scale-110 transition-transform duration-200 active:translate-y-1" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="storefront">storefront</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">Market</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:scale-110 transition-transform duration-200 active:translate-y-1" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="terminal">terminal</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">Terminal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:scale-110 transition-transform duration-200 active:translate-y-1" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shelves">shelves</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold tracking-tighter">Vault</span>
+</a>
+</nav>
+</body></html>

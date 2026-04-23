@@ -1,0 +1,5 @@
+import urllib.request
+url1 = "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzI5NTgxZDQ2ZDNjMDRkYTE4OTBlMDg4ZjE1NzUyYTczEgsSBxCFh9HH6A0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMDYzNjYwNTE0NTU4MTM5OTgyMA&filename=&opi=89354086"
+url2 = "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzA2Mzg2ZjFhNTgwNzQyN2FhYjA0OWQ4OTg1Y2MyYjBhEgsSBxCFh9HH6A0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMDYzNjYwNTE0NTU4MTM5OTgyMA&filename=&opi=89354086"
+urllib.request.urlretrieve(url1, "login.html")
+urllib.request.urlretrieve(url2, "social.html")
